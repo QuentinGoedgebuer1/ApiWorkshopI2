@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5UJ36uJe91HJ5cqDqMAsn2gqj5Z2H2vF2X8CwgPJlNaUd2CsIR/TJiqESkmlywsWTTHRE1oR7FdTwRqjqp2SdQ==",
+  "dgSpecHash": "JIdM/33KkPKEMubvByj3xW5rCqBUg1GVxGhNJzH1fVCOqTkYOPfXuMCHbhN4O6qL7lcOofEYfpnugvEYnMmnkg==",
   "success": true,
   "projectFilePath": "C:\\Users\\QuentinGoedgebuer\\source\\repos\\WorkShopI2\\WorkShopI2.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,8 @@
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
+    "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\QuentinGoedgebuer\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",

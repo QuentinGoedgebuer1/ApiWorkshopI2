@@ -75,3 +75,5 @@ C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\obj\Debug\net7.0\WorkShopI2.p
 C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\obj\Debug\net7.0\WorkShopI2.genruntimeconfig.cache
 C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\obj\Debug\net7.0\ref\WorkShopI2.dll
 C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\bin\Debug\net7.0\Ardalis.GuardClauses.dll
+C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\bin\Debug\net7.0\Npgsql.dll
+C:\Users\QuentinGoedgebuer\source\repos\WorkShopI2\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
