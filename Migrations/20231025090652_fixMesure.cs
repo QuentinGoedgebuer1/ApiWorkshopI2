@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace WorkShopI2.Migrations
 {
     /// <inheritdoc />
-    public partial class switchToPostGreSQL : Migration
+    public partial class fixMesure : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -69,6 +69,7 @@ namespace WorkShopI2.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Temperature = table.Column<string>(type: "text", nullable: false),
                     Humidite = table.Column<string>(type: "text", nullable: false),
+                    AQI = table.Column<string>(type: "text", nullable: false),
                     DateHeure = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
                     ParkId = table.Column<int>(type: "integer", nullable: false)
                 },

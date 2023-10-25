@@ -12,8 +12,8 @@ using WorkShopI2;
 namespace WorkShopI2.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231024142216_switchToPostGreSQL")]
-    partial class switchToPostGreSQL
+    [Migration("20231025090652_fixMesure")]
+    partial class fixMesure
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,10 @@ namespace WorkShopI2.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AQI")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTimeOffset>("DateHeure")
                         .HasColumnType("timestamp with time zone");

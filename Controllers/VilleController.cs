@@ -26,6 +26,8 @@ namespace WorkShopI2.Controllers
                 {
                     Id = x.Id,
                     Nom = x.Nom,
+                    Longitude = x.Longitude,
+                    Latitude = x.Latitude,
                     Parks = x.Parks
                 })
                 .ToList();
@@ -56,6 +58,8 @@ namespace WorkShopI2.Controllers
                 {
                     Id = x.Id,
                     Nom = x.Nom,
+                    Longitude = x.Longitude,
+                    Latitude = x.Latitude,
                     Parks = x.Parks,
                 })
                 .FirstOrDefault(x => x.Id == id);
@@ -67,6 +71,8 @@ namespace WorkShopI2.Controllers
             var newVille = new Ville()
             {
                 Nom = villeDto.Nom,
+                Longitude = villeDto.Longitude,
+                Latitude = villeDto.Latitude,
             };
             _appDbContext.Villes.Add(newVille);
             await _appDbContext.SaveChangesAsync();

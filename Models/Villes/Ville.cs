@@ -7,6 +7,8 @@ namespace WorkShopI2.Models.Villes
         public int Id { get; set; }
 
         public string Nom { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
 
         public List<Park> Parks { get; set; } = new List<Park>();
     }

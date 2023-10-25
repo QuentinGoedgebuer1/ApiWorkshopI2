@@ -29,6 +29,7 @@ namespace WorkShopI2.Controllers
                     Id = x.Id,
                     Temperature = x.Temperature,
                     Humidite = x.Humidite,
+                    AQI = x.AQI,
                     DateHeure = x.DateHeure,
                     ParkId = x.ParkId,
                     Park = new Park()
@@ -59,6 +60,7 @@ namespace WorkShopI2.Controllers
                     Id = x.Id,
                     Temperature = x.Temperature,
                     Humidite = x.Humidite,
+                    AQI = x.AQI,
                     DateHeure = x.DateHeure,
                     ParkId = x.ParkId,
                     Park = new Park()
@@ -86,6 +88,7 @@ namespace WorkShopI2.Controllers
             {
                 Temperature = mesureDto.Temperature,
                 Humidite = mesureDto.Humidite,
+                AQI = mesureDto.AQI,
                 DateHeure = mesureDto.DateHeure,
                 ParkId = mesureDto.ParkId,
                 Park = park
