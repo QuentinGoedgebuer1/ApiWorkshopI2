@@ -18,17 +18,31 @@ namespace WorkShopI2.Controllers
         }
 
         [HttpGet]
-        public List<Ville> Get()
+        public PaginatedList<Ville> Get(int page = 1, int pageSize = 5)
         {
-            return _appDbContext.Villes
+            List<Ville> villeList = _appDbContext.Villes
                 .Include(x => x.Parks)
                 .Select(x => new Ville()
                 {
                     Id = x.Id,
                     Nom = x.Nom,
-                    Parks = x.Parks,
+                    Parks = x.Parks
                 })
                 .ToList();
+
+            int startIndex = (page - 1) * pageSize;
+
+            var villePaginatedList = villeList.OrderByDescending(x => x.Id).Skip(startIndex).Take(pageSize).ToList();
+
+            var newVillePaginatedList = new PaginatedList<Ville>
+            {
+                Items = villePaginatedList,
+                PageNumber = page,
+                TotalItems = villeList.Count(),
+                ItemsPerPage = pageSize,
+            };
+
+            return newVillePaginatedList;
         }
 
         [HttpGet("{id}")]

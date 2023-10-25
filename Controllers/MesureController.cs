@@ -42,6 +42,7 @@ namespace WorkShopI2.Controllers
 
                     }
                 })
+                .Take(20)
                 .ToList();
         }
 

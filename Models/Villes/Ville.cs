@@ -8,6 +8,6 @@ namespace WorkShopI2.Models.Villes
 
         public string Nom { get; set; }
 
-        public List<Park> Parks { get; set; }
+        public List<Park> Parks { get; set; } = new List<Park>();
     }
 }
