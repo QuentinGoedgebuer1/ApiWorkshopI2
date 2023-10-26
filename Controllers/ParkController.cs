@@ -51,7 +51,7 @@ namespace WorkShopI2.Controllers
                     Villes = x.Villes,
                     Longitude = x.Longitude,
                     Latitude = x.Latitude,
-                    Mesures = x.Mesures.Take(30).ToList()
+                    Mesures = x.Mesures.OrderByDescending(x => x.DateHeure).Take(30).ToList()
                 })
                 .FirstOrDefault(x => x.Id == id);
         }
