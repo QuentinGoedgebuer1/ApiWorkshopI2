@@ -58,7 +58,7 @@ namespace WorkShopI2.Controllers
 
             var listNewParks = new List<ParkInVilleByIdDto>() { };
 
-            var listParks = _appDbContext.Parks.Include(x => x.Mesures).ToList();
+            var listParks = _appDbContext.Parks.Include(x => x.Mesures).Where(x => x.VillesId == id).ToList();
             if (listParks.Any())
             {
                 listParks.ForEach(x =>
