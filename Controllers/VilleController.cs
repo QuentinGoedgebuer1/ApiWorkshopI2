@@ -74,11 +74,11 @@ namespace WorkShopI2.Controllers
                             VillesId = x.VillesId,
                             Mesure = new MesureDto()
                             {
-                                AQI = mesures.FirstOrDefault(m => m.ParkId == x.Id).AQI,
-                                DateHeure = mesures.FirstOrDefault(m => m.ParkId == x.Id).DateHeure,
-                                Humidite = mesures.FirstOrDefault(m => m.ParkId == x.Id).Humidite,
-                                ParkId = mesures.FirstOrDefault(m => m.ParkId == x.Id).ParkId,
-                                Temperature = mesures.FirstOrDefault(m => m.ParkId == x.Id).Temperature
+                                AQI = mesures.OrderByDescending(x => x.DateHeure).FirstOrDefault(m => m.ParkId == x.Id).AQI,
+                                DateHeure = mesures.OrderByDescending(x => x.DateHeure).FirstOrDefault(m => m.ParkId == x.Id).DateHeure,
+                                Humidite = mesures.OrderByDescending(x => x.DateHeure).FirstOrDefault(m => m.ParkId == x.Id).Humidite,
+                                ParkId = mesures.OrderByDescending(x => x.DateHeure).FirstOrDefault(m => m.ParkId == x.Id).ParkId,
+                                Temperature = mesures.OrderByDescending(x => x.DateHeure).FirstOrDefault(m => m.ParkId == x.Id).Temperature
                             }
                         };
                         listNewParks.Add(park);
