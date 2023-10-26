@@ -1,6 +1,8 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WorkShopI2.Models.Mesures;
+using WorkShopI2.Models.Parks;
 using WorkShopI2.Models.Villes;
 using WorkShopI2.Models.WeatherForecast;
 
@@ -48,21 +50,70 @@ namespace WorkShopI2.Controllers
         }
 
         [HttpGet("{id}")]
-        public Ville GetById(int id) 
+        public VilleByIdDto GetById(int id) 
         {
             Guard.Against.NegativeOrZero(id, nameof(id));
 
-            return _appDbContext.Villes
+            var mesures = _appDbContext.Mesures.ToList();
+
+            var listNewParks = new List<ParkInVilleByIdDto>() { };
+
+            var listParks = _appDbContext.Parks.Include(x => x.Mesures).ToList();
+            if (listParks.Any())
+            {
+                listParks.ForEach(x =>
+                {
+                    if (x.Mesures.Any())
+                    {
+                        var park = new ParkInVilleByIdDto()
+                        {
+                            Id = x.Id,
+                            Latitude = x.Latitude,
+                            Longitude = x.Longitude,
+                            Nom = x.Nom,
+                            VillesId = x.VillesId,
+                            Mesure = new MesureDto()
+                            {
+                                AQI = mesures.FirstOrDefault(m => m.ParkId == x.Id).AQI,
+                                DateHeure = mesures.FirstOrDefault(m => m.ParkId == x.Id).DateHeure,
+                                Humidite = mesures.FirstOrDefault(m => m.ParkId == x.Id).Humidite,
+                                ParkId = mesures.FirstOrDefault(m => m.ParkId == x.Id).ParkId,
+                                Temperature = mesures.FirstOrDefault(m => m.ParkId == x.Id).Temperature
+                            }
+                        };
+                        listNewParks.Add(park);
+                    }
+                    else
+                    {
+                        var park = new ParkInVilleByIdDto()
+                        {
+                            Id = x.Id,
+                            Latitude = x.Latitude,
+                            Longitude = x.Longitude,
+                            Nom = x.Nom,
+                            VillesId = x.VillesId,
+                        };
+
+                        listNewParks.Add(park);
+                    }
+                });
+            }
+            
+
+            var ville = _appDbContext.Villes
                 .Include(x => x.Parks)
-                .Select(x => new Ville()
+                .Select(x => new VilleByIdDto()
                 {
                     Id = x.Id,
                     Nom = x.Nom,
                     Longitude = x.Longitude,
                     Latitude = x.Latitude,
-                    Parks = x.Parks,
+                    Parks = listNewParks
                 })
                 .FirstOrDefault(x => x.Id == id);
+
+            return ville;
+           
         }
 
         [HttpPost]
